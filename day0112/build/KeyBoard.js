@@ -1,0 +1,1 @@
+console.log(111),console.log(222),new class{constructor(o){this.name=o}sayName(){console.log(this.name)}}("张三").sayName();

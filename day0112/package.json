@@ -1,0 +1,37 @@
+{
+  "name": "bingyu-keyboard",
+  "version": "1.0.0",
+  "description": "this is a keyboard component",
+  "main": "build/Keyboard.js",
+  "scripts": {
+    "build": "webpack --mode production --config ./config/webpack.prod.config.js",
+    "dev": "webpack-dev-server --mode development --open --config ./config/webpack.dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IceRain-mvc/bingyu-keyboard.git"
+  },
+  "keywords": [
+    "keyboard",
+    "Digital",
+    "DigitalKeyBoard"
+  ],
+  "author": "bingyu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IceRain-mvc/bingyu-keyboard/issues"
+  },
+  "homepage": "https://github.com/IceRain-mvc/bingyu-keyboard#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.1"
+  }
+}

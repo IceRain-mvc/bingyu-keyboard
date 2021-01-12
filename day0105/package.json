@@ -1,0 +1,23 @@
+{
+  "name": "change-this",
+  "version": "1.0.3",
+  "description": "",
+  "main": "./src/index.js",
+  "bin": {
+    "first": "./src/bin/first.js"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
