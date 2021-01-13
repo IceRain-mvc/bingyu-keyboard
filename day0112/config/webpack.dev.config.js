@@ -14,7 +14,7 @@ let devConfig = {
     app: ['./src/index.js']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),// 热更新
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index'
@@ -22,7 +22,7 @@ let devConfig = {
   ],
   devServer: {
     inline: true,
-    hot: true,
+    hot: true,//热更新
     host: '127.0.0.1',
     port: process.env.PORT || 8101,
     historyApiFallback: true// history模式下  刷新不会出现404

@@ -5,7 +5,7 @@ let webpack = require('webpack');
 module.exports = {
   output:{
     path: path.join(__dirname, '../build/'),
-    filename:'[name].[hash:8].js',
+    filename:'[name].js',
     libraryTarget: 'umd'
   },
 

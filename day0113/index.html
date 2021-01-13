@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="container">
+  <button id="btn_clear" onclick="aaa()">清空</button>
+</div>
+<div id="app"></div>
+<script src="../node_modules/bingyu-keyboard/build/keyboard.js"></script>
+
+<h2 id="value"></h2>
+<script>
+  // import KeyBoard from "../node_modules/bingyu-keyboard/build/KeyBoard.js";
+
+  function inputValue(msg) {
+    value.innerHTML = msg;
+  }
+
+  let keyboard = new KeyBoard({ // umd
+    el: document.getElementById('app'),
+    inputValue,
+    type: 'integer'
+  });
+  //  大咖  : github 建立属于自己的王朝
+  // function aaa() {
+  //   console.log(111);
+  //   keyboard.value = '';
+  // }
+
+  //
+
+</script>
+</body>
+</html>

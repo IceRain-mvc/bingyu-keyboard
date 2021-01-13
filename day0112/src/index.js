@@ -2,22 +2,19 @@
 // jsx的语法
 // vue的语法
 
-console.log(111);
+import './index.css'
 
-let aaa = () => {
-  console.log(222);
-};
+import KeyBoard from './KeyBoard';
 
-aaa();
 
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-
-  sayName() {
-    console.log(this.name);
-  }
+function inputValue(msg) {
+  document.getElementById('value').innerHTML = msg;
 }
 
-new Person('张三').sayName();
+
+let keyboard = new KeyBoard({
+  el: document.getElementById('app'),
+  inputValue,
+  type:'integer'// 数字键盘  idcard 身份证  dian带小数点
+});
+//keyBoard .属性 和 方法
