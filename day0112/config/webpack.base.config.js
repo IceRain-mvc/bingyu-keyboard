@@ -6,7 +6,7 @@ module.exports = {
   output:{
     path: path.join(__dirname, '../build/'),
     filename:'[name].js',
-    libraryTarget: 'umd'
+    // libraryTarget: 'umd'
   },
 
   //'css-loader' 打包css   'style-loader': js的手段 css代码 插入到html的header中

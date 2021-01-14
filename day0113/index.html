@@ -16,11 +16,13 @@
 <script>
   // import KeyBoard from "../node_modules/bingyu-keyboard/build/KeyBoard.js";
 
+  // import KeyBoard from "../day0112/src/KeyBoard";
+
   function inputValue(msg) {
     value.innerHTML = msg;
   }
 
-  let keyboard = new KeyBoard({ // umd
+  new KeyBoard({ // umd
     el: document.getElementById('app'),
     inputValue,
     type: 'integer'
@@ -30,8 +32,6 @@
   //   console.log(111);
   //   keyboard.value = '';
   // }
-
-  //
 
 </script>
 </body>

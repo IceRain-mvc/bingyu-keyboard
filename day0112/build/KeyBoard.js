@@ -1,1 +1,83 @@
-!function(e,t){if("object"==typeof exports&&"object"==typeof module)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var n=t();for(var o in n)("object"==typeof exports?exports:e)[o]=n[o]}}(self,(function(){return(()=>{"use strict";var e={325:(e,t,n)=>{n.r(t);var o=n(379),r=n.n(o),i=n(424);r()(i.Z,{insert:"head",singleton:!1}),i.Z.locals,new class{constructor(e={}){this.value="",this.options={type:"integer"};let t=Object.assign(this.options,e);console.log(t),this.init(t)}init(e){this.initKey(e.type),this._renderKeyboard(e.el)}initKey(e){let t={};switch(e){case"integer":t={content:"清空",action:"clear"};break;case"idCard":t={content:"X",action:"value"};break;default:t={content:".",action:"value"}}this.items=[{content:"1",action:"value"},{content:"2",action:"value"},{content:"3",action:"value"},{content:"4",action:"value"},{content:"5",action:"value"},{content:"6",action:"value"},{content:"7",action:"value"},{content:"8",action:"value"},{content:"9",action:"value"},t,{content:"0",action:"value"},{content:"&larr;",action:"value"}]}_renderKeyboard(e){let t=this.items.map((e=>`<button>${e.content}</button>`)),n=document.createElement("div");n.innerHTML=t.join(""),n.addEventListener("touchend",(e=>{let t=e.target.innerHTML;"清空"===t?this.value="":"←"===t?this.value=this.value.slice(0,this.value.length-1):this.value+=t,this.options.inputValue(this.value)})),e.appendChild(n)}}({el:document.getElementById("app"),inputValue:function(e){document.getElementById("value").innerHTML=e},type:"integer"})},424:(e,t,n)=>{n.d(t,{Z:()=>i});var o=n(645),r=n.n(o)()((function(e){return e[1]}));r.push([e.id,"#app {\r\n  background: #000;\r\n  height: 200px;\r\n\r\n}\r\n",""]);const i=r},645:e=>{e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var n=e(t);return t[2]?"@media ".concat(t[2]," {").concat(n,"}"):n})).join("")},t.i=function(e,n,o){"string"==typeof e&&(e=[[null,e,""]]);var r={};if(o)for(var i=0;i<this.length;i++){var a=this[i][0];null!=a&&(r[a]=!0)}for(var c=0;c<e.length;c++){var l=[].concat(e[c]);o&&r[l[0]]||(n&&(l[2]?l[2]="".concat(n," and ").concat(l[2]):l[2]=n),t.push(l))}},t}},379:(e,t,n)=>{var o,r=function(){var e={};return function(t){if(void 0===e[t]){var n=document.querySelector(t);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(e){n=null}e[t]=n}return e[t]}}(),i=[];function a(e){for(var t=-1,n=0;n<i.length;n++)if(i[n].identifier===e){t=n;break}return t}function c(e,t){for(var n={},o=[],r=0;r<e.length;r++){var c=e[r],l=t.base?c[0]+t.base:c[0],u=n[l]||0,s="".concat(l," ").concat(u);n[l]=u+1;var d=a(s),f={css:c[1],media:c[2],sourceMap:c[3]};-1!==d?(i[d].references++,i[d].updater(f)):i.push({identifier:s,updater:h(f,t),references:1}),o.push(s)}return o}function l(e){var t=document.createElement("style"),o=e.attributes||{};if(void 0===o.nonce){var i=n.nc;i&&(o.nonce=i)}if(Object.keys(o).forEach((function(e){t.setAttribute(e,o[e])})),"function"==typeof e.insert)e.insert(t);else{var a=r(e.insert||"head");if(!a)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");a.appendChild(t)}return t}var u,s=(u=[],function(e,t){return u[e]=t,u.filter(Boolean).join("\n")});function d(e,t,n,o){var r=n?"":o.media?"@media ".concat(o.media," {").concat(o.css,"}"):o.css;if(e.styleSheet)e.styleSheet.cssText=s(t,r);else{var i=document.createTextNode(r),a=e.childNodes;a[t]&&e.removeChild(a[t]),a.length?e.insertBefore(i,a[t]):e.appendChild(i)}}function f(e,t,n){var o=n.css,r=n.media,i=n.sourceMap;if(r?e.setAttribute("media",r):e.removeAttribute("media"),i&&"undefined"!=typeof btoa&&(o+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i))))," */")),e.styleSheet)e.styleSheet.cssText=o;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(o))}}var p=null,v=0;function h(e,t){var n,o,r;if(t.singleton){var i=v++;n=p||(p=l(t)),o=d.bind(null,n,i,!1),r=d.bind(null,n,i,!0)}else n=l(t),o=f.bind(null,n,t),r=function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(n)};return o(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;o(e=t)}else r()}}e.exports=function(e,t){(t=t||{}).singleton||"boolean"==typeof t.singleton||(t.singleton=(void 0===o&&(o=Boolean(window&&document&&document.all&&!window.atob)),o));var n=c(e=e||[],t);return function(e){if(e=e||[],"[object Array]"===Object.prototype.toString.call(e)){for(var o=0;o<n.length;o++){var r=a(n[o]);i[r].references--}for(var l=c(e,t),u=0;u<n.length;u++){var s=a(n[u]);0===i[s].references&&(i[s].updater(),i.splice(s,1))}n=l}}}}},t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={id:o,exports:{}};return e[o](r,r.exports,n),r.exports}return n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var o in t)n.o(t,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n(325)})()}));
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/KeyBoard.js":
+/*!*************************!*\
+  !*** ./src/KeyBoard.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nclass KeyBoard {\n  constructor(options = {}) {\n    this.value = ''; // 输入的内容\n\n    this.options = {\n      type: 'integer'\n    }; // 合并成一个配置项\n\n    let res = Object.assign(this.options, options);\n    console.log(res);\n    this.init(res);\n  }\n\n  init(options) {\n    // 根据type 处理 键盘\n    this.initKey(options.type); // 3种值\n    // 键盘渲染出来\n\n    this._renderKeyboard(options.el);\n  }\n\n  initKey(type) {\n    let typeKey = {};\n\n    switch (type) {\n      case 'integer':\n        // 左下角变成 清空\n        typeKey = {\n          content: '清空',\n          action: 'clear'\n        };\n        break;\n\n      case 'idCard':\n        typeKey = {\n          content: 'X',\n          action: 'value'\n        };\n        break;\n\n      default:\n        typeKey = {\n          content: '.',\n          action: 'value'\n        };\n        break;\n    }\n\n    this.items = [{\n      content: '1',\n      action: 'value'\n    }, {\n      content: '2',\n      action: 'value'\n    }, {\n      content: '3',\n      action: 'value'\n    }, {\n      content: '4',\n      action: 'value'\n    }, {\n      content: '5',\n      action: 'value'\n    }, {\n      content: '6',\n      action: 'value'\n    }, {\n      content: '7',\n      action: 'value'\n    }, {\n      content: '8',\n      action: 'value'\n    }, {\n      content: '9',\n      action: 'value'\n    }, typeKey, {\n      content: '0',\n      action: 'value'\n    }, {\n      content: '&larr;',\n      action: 'value'\n    }];\n  }\n\n  _renderKeyboard(container) {\n    let keyboards = this.items.map(item => {\n      return `<button>${item.content}</button>`;\n    });\n    let oBox = document.createElement('div');\n    oBox.innerHTML = keyboards.join(''); // 事件\n\n    oBox.addEventListener('touchend', e => {\n      let value = e.target.innerHTML; // console.log(value)\n\n      if (value === '清空') {\n        this.value = '';\n      } else if (value === '←') {\n        //删除 最后一个\n        this.value = this.value.slice(0, this.value.length - 1);\n      } else {\n        this.value += value;\n      }\n\n      this.options.inputValue(this.value);\n    }); // onclick : 300ms延时\n\n    container.appendChild(oBox);\n  }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KeyBoard);\n\n//# sourceURL=webpack://bingyu-keyboard/./src/KeyBoard.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	// startup
+/******/ 	// Load entry module
+/******/ 	__webpack_require__("./src/KeyBoard.js");
+/******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ })()
+;
