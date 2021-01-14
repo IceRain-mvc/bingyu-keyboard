@@ -4,7 +4,8 @@
   "description": "this is a command by me",
   "main": "index.js",
   "bin": {
-    "clb-login": "./src/bin/login.js"
+    "clb-login": "./src/bin/login.js",
+    "mark-dir": "./src/bin/handle_dir.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
