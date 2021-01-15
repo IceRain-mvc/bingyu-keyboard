@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/IceRain-mvc/bingyu-keyboard/issues"
   },
-  "homepage": "https://github.com/IceRain-mvc/bingyu-keyboard#readme"
+  "homepage": "https://github.com/IceRain-mvc/bingyu-keyboard#readme",
+  "dependencies": {
+    "commander": "^6.2.1"
+  }
 }

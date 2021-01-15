@@ -9,7 +9,6 @@ let {program} = require('commander');
 program.version('1.0.1');
 // 设置参数格式
 program
-
   .description('this is a  translate util')
   .option('-w,--word <str>', '想要查找的单词');
 // 解析参数
