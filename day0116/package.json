@@ -1,11 +1,8 @@
 {
-  "name": "bingyu-trans",
+  "name": "bingyu-any",
   "version": "1.0.0",
-  "description": "translate english to chinese and chinese to english",
+  "description": "create a static web server for file system",
   "main": "index",
-  "bin": {
-    "trans": "./bin/translate"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +11,11 @@
     "url": "git+https://github.com/IceRain-mvc/bingyu-keyboard.git"
   },
   "keywords": [
-    "translate"
+    "file",
+    "System",
+    "static",
+    "web",
+    "server"
   ],
   "author": "bingyu",
   "license": "MIT",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/IceRain-mvc/bingyu-keyboard#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5"
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
   }
 }

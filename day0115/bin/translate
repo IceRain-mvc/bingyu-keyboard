@@ -1,6 +1,10 @@
+#! /usr/bin/env node
+
 // 翻译 可以不用commander  anywhere -p 8999
 
 let cheerio = require('cheerio');
+
+let http = require('http');
 
 function getRequest(url) {
   return new Promise((resolve, reject) => {
@@ -39,11 +43,16 @@ function language(str) {
 
 
 let requestObj = {
-  'zh': function (word) {
-    console.log('中文');
+  'zh': async function (word) {
+    // 翻译成英文
+    let res = await getRequest(`http://dict.youdao.com/w/eng/${word}`);
+    let $ = cheerio.load(res);
+    process.stdout.write($('.wt-container .title span').text().split('\n').join(' ').trim());
   },
-  'en': function (word) {
-    console.log('英文');
+  'en': async function (word) {
+    let res = await getRequest(`http://dict.youdao.com/w/${word}`);
+    let $ = cheerio.load(res);
+    process.stdout.write($('#results-contents #phrsListTab .trans-container ul li').text());
   }
 };
 
