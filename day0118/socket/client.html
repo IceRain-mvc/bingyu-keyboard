@@ -33,21 +33,29 @@
 
   ws.onmessage = function (message) {
     text.value = '';
-    let {code} = JSON.parse(message.data);
+    let {code, msg} = JSON.parse(message.data);
     switch (code) {
       case 0:
         // 登录注册相关的
-        let {success, msg} = JSON.parse(message.data);
+        let {success, username} = JSON.parse(message.data);
         if (success === 0) {
           alert('登录失败');
         } else {
+          //登录成功
+          localStorage.setItem('username', username);
           alert(msg);
           connection.style.display = 'block';
           login.style.display = 'none';
         }
         break;
       case 1:
-      // 信息相关
+        // 数据读取出来 渲染
+        let {user} = JSON.parse(message.data);
+        let oLi = document.createElement('li');
+        (user === localStorage.getItem('username')) && (oLi.style.color = 'pink');
+        oLi.innerHTML = `${user}:${msg}`;
+        show.appendChild(oLi);
+        break;
     }
 
     /**
@@ -60,8 +68,13 @@
 
 
   btn_send.onclick = function () {
+    // 信息相关
+    let user = localStorage.getItem('username');
+
     ws.send(JSON.stringify({
       code: 1,// 对话信息  code:0 登录信息
+      // 基于登录之后的用户名
+      user,
       msg: text.value
     }))
   };

@@ -4,6 +4,7 @@ let path = require('path');
 let ws = new WebServerSocket.Server({
   port: 8000
 });
+let clients = [];
 //clients .forEach(item=>item.send())
 ws.on('connection', function (client) {//client : 客户端传递过来的socket实例
   console.log('有客到');
@@ -32,8 +33,11 @@ ws.on('connection', function (client) {//client : 客户端传递过来的socket
             client.send(JSON.stringify({
               code: 0,// 注册相关
               success: 1,// 成功  0:失败
-              msg: '登录成功'
+              msg: '登录成功',
+              username
             }));
+            //client : 每一个客户端
+            clients.push({client,username});
           } else {
             // 登录失败 密码错误
             client.send(JSON.stringify({
@@ -51,15 +55,26 @@ ws.on('connection', function (client) {//client : 客户端传递过来的socket
           fs.writeFileSync(path.join(__dirname, './users/userList.json'), JSON.stringify(users));
           client.send(JSON.stringify({
             code: 0,// 注册相关
-            success: 1,// 成功  0:失败
+            success: 1,// 成功  0:失败,
+            username,
             msg: '没有此账户 注册成功 并登录成功'
           }));
+          clients.push({client,username});
         }
 
 
         break;
       case 1:
-      // 发送信息
+        // 转发给所有的用户
+        let {msg,user} = JSON.parse(message);
+
+        clients.forEach(item => item.client.send(JSON.stringify({
+          msg,
+          user,
+          code:1
+        })));
+
+        break;
       default:
       // 其他
 
