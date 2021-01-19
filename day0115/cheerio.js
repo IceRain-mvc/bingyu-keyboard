@@ -16,6 +16,6 @@ let $ = cheerio.load(`
 //2. 解析  选择器
 
 console.log($('.container h1').text());
-// console.log($('.container ul>li')['0'].children[0].data);
-// console.log($('.container ul>li')['1'].children[0].data);
-// console.log($('.container ul>li')['2'].children[0].data);
+// console.log($('.container ul>li')['0'].children[0].users);
+// console.log($('.container ul>li')['1'].children[0].users);
+// console.log($('.container ul>li')['2'].children[0].users);

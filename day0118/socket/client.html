@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div>
+
+  <div id="login">
+    <input type="text" id="username">
+    <input type="text" id="pwd">
+    <button id="btn_login">登录</button>
+  </div>
+
+  <div id="connection">
+
+    <h2 id="conn">未连接</h2>
+    <input type="text" id="text" placeholder="请输入一段土味情话">
+    <button id="btn_send">发送</button>
+    <ul id="show">
+    </ul>
+  </div>
+</div>
+
+<script>
+
+  connection.style.display = 'none';
+  let ws = new WebSocket('ws://localhost:8000');
+  ws.onopen = function () {
+    conn.innerHTML = '已连接';
+  };
+
+  ws.onmessage = function (message) {
+    text.value = '';
+    let {code} = JSON.parse(message.data);
+    switch (code) {
+      case 0:
+        // 登录注册相关的
+        let {success, msg} = JSON.parse(message.data);
+        if (success === 0) {
+          alert('登录失败');
+        } else {
+          alert(msg);
+          connection.style.display = 'block';
+          login.style.display = 'none';
+        }
+        break;
+      case 1:
+      // 信息相关
+    }
+
+    /**
+     *     let {msg} = JSON.parse(message.data);
+     let oLi = document.createElement('li');
+     oLi.innerHTML = msg;
+     show.appendChild(oLi);
+     */
+  };
+
+
+  btn_send.onclick = function () {
+    ws.send(JSON.stringify({
+      code: 1,// 对话信息  code:0 登录信息
+      msg: text.value
+    }))
+  };
+
+  btn_login.onclick = function () {
+    if (ws.readyState === 1) {
+      if (username.value.trim() && pwd.value.trim()) {
+        ws.send(JSON.stringify({
+          code: 0,// 对话信息  code:0 登录信息
+          username: username.value,
+          password: pwd.value,
+        }));
+      } else {
+        alert('请输入信息');
+      }
+    }
+  };
+
+
+</script>
+</body>
+</html>

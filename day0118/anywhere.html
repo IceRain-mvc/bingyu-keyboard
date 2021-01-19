@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%=filename%></title>
+  <style>
+    li {
+
+    }
+    a {
+      text-decoration: none;
+      color: #ff3838;
+    }
+  </style>
+</head>
+<body>
+<!--
+所有文件的列表
+展示文件的个数
+展示 文件列表
+-->
+
+<ul>
+  <%fileList.forEach(item=>{ %>
+  <li><a href="<%=item %>"><%=item%></a></li>
+  <%}) %>
+</ul>
+</body>
+
+</html>
