@@ -1,0 +1,44 @@
+{
+  "name": "bingyu-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "bin": {
+    "static": "./day0118/server.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bingyu-command": "^1.0.0",
+    "bingyu-keyboard": "^1.0.2",
+    "change-this": "^1.0.3",
+    "commander": "^7.0.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
+    "mysql": "^2.18.1",
+    "webpack-merge": "^5.7.3",
+    "ws": "^7.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IceRain-mvc/bingyu-keyboard.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "static",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IceRain-mvc/bingyu-keyboard/issues"
+  },
+  "homepage": "https://github.com/IceRain-mvc/bingyu-keyboard#readme"
+}
