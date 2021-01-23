@@ -1,4 +1,4 @@
-let {postList} = require('../methods/postList');
+let {postList, insertInto, deleteById} = require('../methods/postList');
 let {getList, getUser} = require('../methods/getList');
 
 module.exports = [
@@ -16,5 +16,15 @@ module.exports = [
     url: '/user',
     method: 'GET',
     callback: getUser
+  },
+  {
+    url: '/deleteById',
+    method: 'POST',
+    callback: deleteById
+  },
+  {
+    url: '/add',
+    method: 'POST',
+    callback: insertInto
   },
 ];

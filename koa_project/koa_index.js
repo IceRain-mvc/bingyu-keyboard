@@ -1,7 +1,7 @@
-let Koa = require('koa');
+const app = require('./app');
+
 let childProcess = require('child_process');
 let path = require('path');
-let app = new Koa();
 
 let assert = require('assert');
 

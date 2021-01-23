@@ -7,27 +7,47 @@
 <body>
 <h1>hello</h1>
 
+<input type="text" id="username" placeholder="username">
+<input type="text" id="age" placeholder="age">
+<button id="insert">新增</button>
+<br>
+<input type="text" id="input" placeholder="userid">
+<button id="deleteBy">删除</button>
+
+<script src="./js/request.js"></script>
 <script>
 
-  let options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: '小张', age: '23'
-    })
-  };
+  //  let options = {
+  //    method: 'POST',
+  //    headers: {
+  //      'Content-Type': 'application/json'
+  //    },
+  //    body: JSON.stringify({
+  //      name: '小张', age: '23'
+  //    })
+  //  };
+  //
+  //  // h5之后
+  //  fetch('/list', options).then(res => {
+  //    if (res.ok) {
+  //      //把数据转换成json格式
+  //      return res.json()
+  //    }
+  //  }).then(res => {
+  //    console.log(res);
+  //  })
+  //
+  //
 
-  // h5之后
-  fetch('/list', options).then(res => {
-    if (res.ok) {
-      //把数据转换成json格式
-      return res.json()
-    }
-  }).then(res => {
+  insert.onclick = async function () {
+    let res = await request('/add',{method: 'POST', body: {name: username.value, age: age.value}});
     console.log(res);
-  })
+  };
+  deleteBy.onclick = async function () {
+
+    let res = await request('/deleteById',{method: 'POST', body: {userid: input.value.trim()}});
+    console.log(res);
+  }
 
 </script>
 </body>
