@@ -30,7 +30,7 @@ module.exports = [
     callback: insertInto
   }, {
     url: '/login',
-    method: 'GET',
+    method: 'POST',
     callback: login
   }
 ];
